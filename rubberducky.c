@@ -15,11 +15,11 @@ void main(void) {
 
   DLY_ms(200);
 
-  KBD_press(KBD_KEY_LEFT_GUI);  // Press Windows key
-  KBD_press('r');               // Press R key
+  KBD_press(KBD_KEY_LEFT_GUI);
+  KBD_press('r');
   DLY_ms(80);
-  KBD_release('r');             // Release R key
-  KBD_release(KBD_KEY_LEFT_GUI);// Release Windows key
+  KBD_release('r');
+  KBD_release(KBD_KEY_LEFT_GUI);
   
   DLY_ms(200);
 
